@@ -14,6 +14,7 @@ const getTime = () => {
 
 //🐊
 const toBinary = function (string) {
+    // CONSTS
     const oneChars = ['■'];
     const zeroChars = [' '];
 
@@ -21,19 +22,20 @@ const toBinary = function (string) {
     const rndmIndexOne = Math.floor(Math.random() * oneChars.length);
 
     const zero = zeroChars[rndmIndexZero];
-const one = oneChars[rndmIndexOne];
-// generar array con hilos binarios por cada caracter
+    const one = oneChars[rndmIndexOne];
+
+    // generar array con hilos binarios por cada caracter
     const bString = string.split('').map( l => l.charCodeAt().toString(2));
     // console.log(bString);
-
     
+    // definir que char usar dependiendo de si es 0 o 1
     let sToChar = bString.map(r => r.split('').map(c => c === '0' ? zero : one));
     
     // console.log(sToChar);
     let fString = '';
-    console.log("   _ _ _ _ _ _");
+    // console.log("   _ _ _ _ _ _");
     sToChar.map(s=>fString += "   " + s.join(' ') + '\n');    
-    console.log('   ' + string.split('').join(' '));
+    process.stdout.write(`\r   ${string.split('').join(' ')}`);
     return fString;
 }
 
