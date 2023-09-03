@@ -16,8 +16,8 @@ function App() {
     <div className="App" style={appStyle}>
       {/* <img className="bg-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/TV_noise.jpg/1024px-TV_noise.jpg" alt="tv static" /> */}
       {/* <Header /> */}
-      {/* <Jerga /> */}
-      <JergaRelok className='relokCont' />
+      <Jerga />
+      <JergaRelok />
     </div>
   );
 }

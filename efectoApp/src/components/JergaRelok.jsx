@@ -25,7 +25,6 @@ function JergaRelok() {
     marginBottom: '2em',
     border: 'solid white .1em',
   }
-    
   
   const [time, setTime] = useState(new Date());
 
@@ -39,31 +38,29 @@ function JergaRelok() {
   
   const bianryTime = (timeFormat) => {
     let hour, minutes, seconds, milliseconds;
+    let hilo, hiloB;
     let timeArray, formatTime;
-    
+
+    [hour, minutes, seconds, milliseconds] = [time.getHours(), time.getMinutes(), time.getSeconds(), time.getMilliseconds()];
+    timeArray = [hour,minutes,seconds];
+    formatTime = timeArray.map(num => num.toString().padStart(2, '0')).join('').toString();
+
+
     switch (timeFormat) {
 
       case 'ms':
-        const hilo = time.getTime().toString();
-        const hiloB = hilo.split('').map(char => char.charCodeAt().toString(2).slice(2));
+        hilo = time.getTime().toString();
+        hiloB = hilo.split('').map(char => char.charCodeAt().toString(2).slice(2));
         // console.log(hilo);
         return hiloB;
 
-      case 'hmsm':
-        [hour, minutes, seconds, milliseconds] = [time.getHours(), time.getMinutes(), time.getSeconds(), time.getMilliseconds()];
-        timeArray = [hour,minutes,seconds];
-  
-        formatTime = timeArray.map(num => num.toString().padStart(2, '0')).join('').toString();
-        const formatTimeMs = formatTime + (milliseconds.toString().padStart(3, '0'));
-        const formatTimeMsB = formatTimeMs.split('').map(char => char.charCodeAt().toString(2).slice(2));
-        console.log(formatTimeMs);
-        return formatTimeMsB;
+      case 'hmsm':      
+        hilo = formatTime + (milliseconds.toString().padStart(3, '0'));
+        hiloB = hilo.split('').map(char => char.charCodeAt().toString(2).slice(2));
+        console.log(hilo);
+        return hiloB;
 
-      case 'hms':
-        [hour, minutes, seconds] = [time.getHours(), time.getMinutes(), time.getSeconds()];
-        timeArray = [hour, minutes, seconds];
-  
-        formatTime = timeArray.map(num => num.toString().padStart(2, '0')).join('').toString();
+      case 'hms':  
         return formatTime.split('').map(char => char.charCodeAt().toString(2).slice(2));
 
       default:
@@ -89,7 +86,7 @@ function JergaRelok() {
 
   return(
     <div className="jergaContainer" style={JergaContainerStyle}>
-      <p>hola</p>
+      {/* <p>hola</p> */}
       <div className="jerga" style={JergaStyle}>
         {
           bianryTime(timeFormat).map((bString, index) => <Row key={index} className={index} value={bString}/>)
