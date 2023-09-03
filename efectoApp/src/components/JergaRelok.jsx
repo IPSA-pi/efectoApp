@@ -6,15 +6,26 @@ function JergaRelok() {
   
   // controls
   const refreshInterval = 1000;
-  const setTimeFormat = 'ms'
+  const [timeFormat, setTimeFormat] = useState('ms');
 
   // style
+  const JergaContainerStyle = {
+    width: 'fit-content',
+    margin: 'auto',
+    color: 'white',
+    textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column'
+  }
+
   const JergaStyle = {
     width: 'fit-content',
     margin: 'auto',
-    marginTop: '5em',
+    // margin: '5em',
+    marginBottom: '2em',
     border: 'solid white .1em',
   }
+    
   
   const [time, setTime] = useState(new Date());
 
@@ -60,11 +71,31 @@ function JergaRelok() {
     }
   };  
 
+  const toggleTimeFormat = () => {
+    switch (timeFormat) {
+      case 'ms':
+        setTimeFormat('hmsm');
+        break;
+      case 'hmsm':
+        setTimeFormat('hms');
+        break;
+      case 'hms':
+        setTimeFormat('ms');
+        break;
+      default:
+        throw new Error('Unknown time format');
+    }
+  };
+
   return(
-    <div className="jerga" style={JergaStyle}>
-      {
-        bianryTime(setTimeFormat).map((bString, index) => <Row key={index} className={index} value={bString}/>)
-      }
+    <div className="jergaContainer" style={JergaContainerStyle}>
+      <p>hola</p>
+      <div className="jerga" style={JergaStyle}>
+        {
+          bianryTime(timeFormat).map((bString, index) => <Row key={index} className={index} value={bString}/>)
+        }
+      </div>
+      <button onClick={toggleTimeFormat}>Toggle Time Format</button>
     </div>
   );
 }
