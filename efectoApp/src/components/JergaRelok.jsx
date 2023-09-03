@@ -1,5 +1,6 @@
 import React, {useState, useEffect } from 'react';
 import Row from './Row';
+import Button from './Button';
 
 
 function JergaRelok() {
@@ -86,13 +87,12 @@ function JergaRelok() {
 
   return(
     <div className="jergaContainer" style={JergaContainerStyle}>
-      {/* <p>hola</p> */}
-      <div className="jerga" style={JergaStyle}>
+      {/* <Button text='Toggle Time Format' onClick={toggleTimeFormat} /> */}
+      <div className="jerga" style={JergaStyle} onClick={toggleTimeFormat}>
         {
           bianryTime(timeFormat).map((bString, index) => <Row key={index} className={index} value={bString}/>)
         }
       </div>
-      <button onClick={toggleTimeFormat}>Toggle Time Format</button>
     </div>
   );
 }
