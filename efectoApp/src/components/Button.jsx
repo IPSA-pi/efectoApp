@@ -7,6 +7,7 @@ function Button(props) {
     backgroundColor: 'black',
     margin: '.5em .5em 0 .5em',
     height: '2em',
+    width: 'fit-content',
     borderStyle: 'none',
     border: '1px solid white',
     color: 'white',

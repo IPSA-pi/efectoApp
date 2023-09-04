@@ -12,7 +12,8 @@ function Jerga() {
     outline: 'none',
     boxShadow: 'none',
     resize: 'none',
-    width: '100%'
+    width: '100%',
+    marginBottom: '1em'
   };
 
   const [hilo, setHilo] = useState("EFECTOTV")

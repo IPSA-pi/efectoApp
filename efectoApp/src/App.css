@@ -2,28 +2,36 @@
   background-color: black;
 }
 
-/* Enter and enter-active classes for fade-in animation */
-/* Enter and enter-active classes for slide-in animation */
-.slide-enter {
-  transform: translateX(100%);
-  transition: transform 300ms ease-in-out;
+.app {
+  height: 100vh;
 }
-.slide-enter-active {
-  transform: translateX(0);
-}
-
-/* Exit and exit-active classes for slide-out animation */
-.slide-exit {
-  transform: translateX(0);
-  transition: transform 300ms ease-in-out;
-}
-.slide-exit-active {
-  transform: translateX(100%);
-}
-
 
 .buttonsContainer {
   display: 'flex';
   flex-directions: column;
   justifiy-content: center;
+}
+
+.menu-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.hamburger {  
+  display: inline;
+  color: white;
+  font-size: 2em;
+  margin: 1em;
+}
+
+.componentsContainer {
+  padding-top: 7em;
 }

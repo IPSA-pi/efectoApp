@@ -2,7 +2,7 @@ import React from 'react';
 
 
 function Cell(props) {
-  const cellSize = '1.4em'
+  const cellSize = '2em'
 
   const CellStyle = {
     width: cellSize,
