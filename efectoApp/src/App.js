@@ -2,38 +2,37 @@ import React, { useState } from 'react';
 import './App.css';
 import Jerga from './components/Jerga';
 import JergaRelok from './components/JergaRelok';
-import Header from './components/Header';
+import Home from './components/Home';
 import Button from './components/Button';
-
-
 
 
 function App() {
 
-  const [activeComponent, setActiveComponent] = useState('Header');
+  const [activeComponent, setActiveComponent] = useState('Home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   return (
     <div className="App">
-      <div className="menu-container">
-        <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <div className="hamburger-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           ☰
         </div>
+      <div className="menu-container">
 
         {isMenuOpen && (
           <ul className='menu-items'>
-            <Button text='Show header' onClick={() => {setActiveComponent('Header'); setIsMenuOpen(false);}}/>
-            <Button text='Show jerga' onClick={() => {setActiveComponent('Jerga'); setIsMenuOpen(false);}}/>
-            <Button text='Show JergaRelok' onClick={() => {setActiveComponent('JergaRelok'); setIsMenuOpen(false);}}/>
+            <Button text='casa' onClick={() => {setActiveComponent('Home'); setIsMenuOpen(false);}}/>
+            <Button text='jerga_binaria' onClick={() => {setActiveComponent('Jerga'); setIsMenuOpen(false);}}/>
+            <Button text='relok_binario' onClick={() => {setActiveComponent('JergaRelok'); setIsMenuOpen(false);}}/>
           </ul>
         )}
       </div>
-      <div className="componentsContainer">
 
-        {activeComponent === 'Header' && <Header /> }
+      <div className="componentsContainer">
+        {activeComponent === 'Home' && <Home /> }
         {activeComponent === 'Jerga' && <Jerga /> }
         {activeComponent === 'JergaRelok' && <JergaRelok /> }
       </div>
+
     </div>
   );
 }

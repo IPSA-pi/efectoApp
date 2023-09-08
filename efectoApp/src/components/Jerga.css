@@ -1,0 +1,22 @@
+textarea {
+  border: red 1px solid;
+  background-color: black;
+  color: white;
+  height: 1em;
+  overflow: hidden;
+  text-wrap: none;
+  outline: none;
+  box-shadow: none;
+  resize: none;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.jerga {
+  width: fit-content;
+  margin: auto;
+  marginTop: 5em;
+  border: solid black .1em;
+}
+
+

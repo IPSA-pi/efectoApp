@@ -1,0 +1,9 @@
+.home-container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+p {
+  font-family: 'Share Tech Mono', monospace;
+}

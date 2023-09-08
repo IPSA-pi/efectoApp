@@ -1,31 +1,12 @@
 import React, {useState, useEffect } from 'react';
 import Row from './Row';
-import Button from './Button';
-
+import './JergaRelok.css';
 
 function JergaRelok() {
   
   // controls
   const refreshInterval = 1000;
   const [timeFormat, setTimeFormat] = useState('ms');
-
-  // style
-  const JergaContainerStyle = {
-    width: 'fit-content',
-    margin: 'auto',
-    color: 'white',
-    textAlign: 'center',
-    display: 'flex',
-    flexDirection: 'column'
-  }
-
-  const JergaStyle = {
-    width: 'fit-content',
-    margin: 'auto',
-    // margin: '5em',
-    marginBottom: '2em',
-    border: 'solid white .1em',
-  }
   
   const [time, setTime] = useState(new Date());
 
@@ -86,9 +67,9 @@ function JergaRelok() {
   };
 
   return(
-    <div className="jergaContainer" style={JergaContainerStyle}>
+    <div className="jergaContainer" >
       {/* <Button text='Toggle Time Format' onClick={toggleTimeFormat} /> */}
-      <div className="jerga" style={JergaStyle} onClick={toggleTimeFormat}>
+      <div className="jerga"  onClick={toggleTimeFormat}>
         {
           bianryTime(timeFormat).map((bString, index) => <Row key={index} className={index} value={bString}/>)
         }
