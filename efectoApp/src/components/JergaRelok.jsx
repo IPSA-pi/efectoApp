@@ -6,6 +6,7 @@ function JergaRelok() {
   
   // controls
   const refreshInterval = 1000;
+  
   const [timeFormat, setTimeFormat] = useState('ms');
   
   const [time, setTime] = useState(new Date());
@@ -29,7 +30,6 @@ function JergaRelok() {
 
 
     switch (timeFormat) {
-
       case 'ms':
         hilo = time.getTime().toString();
         hiloB = hilo.split('').map(char => char.charCodeAt().toString(2).slice(2));
@@ -67,7 +67,7 @@ function JergaRelok() {
   };
 
   return(
-    <div className="jergaContainer" >
+    <div className="jergaRelokContainer" >
       {/* <Button text='Toggle Time Format' onClick={toggleTimeFormat} /> */}
       <div className="jerga"  onClick={toggleTimeFormat}>
         {

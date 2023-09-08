@@ -21,9 +21,11 @@ function Jerga() {
         value={hilo}
         onChange={handleHiloChange}
         />
-      {
-        hiloB.map((bString, index) => <Row key={index} className={index} value={bString}/>)
-      }
+      <div className="jerga-container">
+        {        
+          hiloB.map((bString, index) => <Row key={index} className={index} value={bString}/>)
+        }
+      </div>
 
     </div>
   );

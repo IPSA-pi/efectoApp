@@ -20,7 +20,9 @@ function App() {
 
         {isMenuOpen && (
           <ul className='menu-items'>
-            <Button text='casa' onClick={() => {setActiveComponent('Home'); setIsMenuOpen(false);}}/>
+            <Button onClick={() => {setActiveComponent('Home'); setIsMenuOpen(false);}}>
+              <img src="../public/efectotv.jpg" className="nav-icon" alt="" />
+            </Button>
             <Button text='jerga_binaria' onClick={() => {setActiveComponent('Jerga'); setIsMenuOpen(false);}}/>
             <Button text='relok_binario' onClick={() => {setActiveComponent('JergaRelok'); setIsMenuOpen(false);}}/>
           </ul>

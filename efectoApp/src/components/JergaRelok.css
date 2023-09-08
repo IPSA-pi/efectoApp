@@ -1,4 +1,4 @@
-.jergaContainer {
+.jergaRelokContainer {
   width: fit-content;
   margin: auto;
   color: white;
@@ -12,5 +12,5 @@
   margin: auto;
   /* // margin: 5em; */
   margin-bottom: 2em;
-  border: solid white .1em;
+  /* border: solid white .1em; */
 }

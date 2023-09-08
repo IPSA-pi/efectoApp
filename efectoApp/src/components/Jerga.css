@@ -4,7 +4,6 @@ textarea {
   color: white;
   height: 1em;
   overflow: hidden;
-  text-wrap: none;
   outline: none;
   box-shadow: none;
   resize: none;
@@ -12,11 +11,5 @@ textarea {
   margin-bottom: 1em;
 }
 
-.jerga {
-  width: fit-content;
-  margin: auto;
-  marginTop: 5em;
-  border: solid black .1em;
-}
 
 
