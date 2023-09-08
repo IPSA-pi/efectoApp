@@ -1,4 +1,3 @@
-import React from 'react';
 import Cell from './Cell';
 
 function Row(props) {
@@ -12,8 +11,18 @@ function Row(props) {
   return (
     <div className={rowClass} style={RowStyle}>
       {
-        bString.split('').map((char, index) => char === '0' ? <Cell className= {rowClass + ` cell ${index} cero` } key={index} value={char}/>
-                                                          : <Cell className={rowClass + ` cell ${index} uno`} key={index} value={char}/>)
+        bString
+          .split('')
+          .map((char, index) => 
+            char === '0' 
+              ? <Cell 
+                  className={rowClass + ` cell ${index} cero` } 
+                  key={index} 
+                  value={char}/>
+              : <Cell 
+                  className={rowClass + ` cell ${index} uno`} 
+                  key={index} 
+                  value={char}/>)
       } 
     </div>
   );
